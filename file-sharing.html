@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+        }
+        .top-bar {
+            background-color: #6C5B7B;
+            color: #fff;
+            padding: 8px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-bar {
+            margin-top: 5px;
+            margin-right: 20px;
+            position: relative;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid #6C5B7B;
+            outline: none;
+            width: 200px; 
+            transition: width 0.3s ease;
+        }
+        .search-bar input[type="text"]:focus {
+            width: 300px; 
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #8E7CC3;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #A899C0;
+        }
+        .sidebar {
+            background-color: #52437B;
+            color: #fff;
+            width: 150px;
+            height: 100vh;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            padding-top: 50px;
+            border-right: 1px solid #7C6A92;
+        }
+        .main-content {
+            margin-left: 160px;
+            padding: 20px;
+            padding-top: 80px;
+            display: none; 
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            text-align: center;
+            background-color: #8E7CC3;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #A899C0;
+        }
+        .quarter-images img {
+            width: 250px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .quarter-images img:hover {
+            transform: scale(1.2); 
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: #fefefe;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            position: relative;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+            cursor: zoom-out;
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        .label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .description {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Online Portfolio</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#" class="btn" onclick="showFirstQuarter()">1st Quarter</a>
+        <a href="#" class="btn" onclick="showSecondQuarter()">2nd Quarter</a>
+        <a href="index.html" class="btn">Log Out</a>
+    </div>
+    <div class="main-content" id="first-quarter-content">
+        <div class="quarter-images">
+            <div>
+                <img src="1qsw1.jpg" alt="1st Quarter SW1" onclick="openModal('1qsw1.jpg', '1st Quarter SW1')">
+                <div class="label">1st Quarter SW1:</div>
+                <div class="description">Meal Planner </div>
+            </div>
+            <div>
+                <img src="1qsw2.jpg" alt="1st Quarter SW2" onclick="openModal('1qsw2.jpg', '1st Quarter SW2')">
+                <div class="label">1st Quarter SW2:</div>
+                <div class="description">Upgraded Meal Planner </div>
+            </div>
+            <div>
+                <img src="1qproj.jpg" alt="1st Quarter Project" onclick="openModal('1qproj.jpg', '1st Quarter Project')">
+                <div class="label">1st Quarter Project:</div>
+                <div class="description">Noli Me Tangere Character List</div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content" id="second-quarter-content">
+        <div class="quarter-images">
+            <div>
+                <img src="2qsw1.jpg" alt="2nd Quarter SW1" onclick="openModal('2qsw1.jpg', '2nd Quarter SW1')">
+                <div class="label">2nd Quarter SW1:</div>
+                <div class="description">Menu Making</div>
+            </div>
+            <div>
+                <img src="2qsw2.jpg" alt="2nd Quarter SW2" onclick="openModal('2qsw2.jpg', '2nd Quarter SW2')">
+                <div class="label">2nd Quarter SW2:</div>
+                <div class="description">Upgraded Menu</div>
+            </div>
+            <div>
+                <img src="2qproj.jpg" alt="2nd Quarter Project" onclick="openModal('2qproj.jpg', '2nd Quarter Project')">
+                <div class="label">2nd Quarter Project:</div>
+                <div class="description">Philippines Photo Gallery</div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+    <script>
+        function showFirstQuarter() {
+            document.getElementById('first-quarter-content').style.display = 'flex';
+            document.getElementById('second-quarter-content').style.display = 'none';
+        }
+
+        function showSecondQuarter() {
+            document.getElementById('first-quarter-content').style.display = 'none';
+            document.getElementById('second-quarter-content').style.display = 'flex';
+        }
+
+        function openModal(imgSrc, imgAlt) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modal-img");
+
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

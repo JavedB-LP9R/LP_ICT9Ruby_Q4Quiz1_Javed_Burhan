@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style type="text/css">
+        body {
+            background-color: #D393F6; 
+            font-family: 'Roboto', sans-serif; 
+            color: #ffffff; 
+        }
+        .login-container {
+            margin-top: 100px;
+            background-color: rgba(0, 0, 0, 0.8); 
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.1); 
+            padding: 40px;
+            position: relative;
+        }
+        .login-heading {
+            text-align: center;
+            font-weight: 700; 
+            margin-bottom: 30px;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+        .form-control {
+            border-color: transparent; 
+            border-radius: 4px; 
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            color: #ffffff; 
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5); 
+        }
+        .login-button {
+            background-color: #260C34 ;
+            border-color: #9A08E8 ;
+            border-radius: 4px;
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        .login-button:hover {
+            background-color: #00cc00; 
+            border-color: #00cc00;
+        }
+        .login-link {
+            color: #ffffff; 
+            text-decoration: none;
+        }
+        .login-link:hover {
+            color: #cccccc; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="login-container">
+                    <h2 class="login-heading glitch">Log In</h2> 
+                    <form action="file-sharing.html">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block login-button">Log in</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
